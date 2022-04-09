@@ -1,5 +1,7 @@
 package components
 
+import "fmt"
+
 var Suites = []Suite{
 	Spades,
 	Clubs,
@@ -45,4 +47,12 @@ func CreateNewDeck() *Deck {
 
 func (d *Deck) GetCard(i int) Card {
 	return d.cards[i]
+}
+
+func (d *Deck) PrintDeck() {
+	for i := 0; i < len(d.cards); i++ {
+		card := d.GetCard(i)
+		fmt.Print(card)
+		fmt.Print("\n")
+	}
 }
