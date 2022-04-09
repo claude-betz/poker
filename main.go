@@ -5,7 +5,15 @@ import (
 )
 
 func main() {
+	// unshuffled deck
 	deck := components.CreateNewDeck()
-	deck.PrintDeck()
 
+	// print
+	deck.Print()
+
+	// shuffle deck
+	deck.Shuffle()
+
+	// print
+	deck.Print()
 }

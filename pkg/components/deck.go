@@ -1,6 +1,10 @@
 package components
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 var Suites = []Suite{
 	Spades,
@@ -49,10 +53,21 @@ func (d *Deck) GetCard(i int) Card {
 	return d.cards[i]
 }
 
-func (d *Deck) PrintDeck() {
+func (d *Deck) Print() {
 	for i := 0; i < len(d.cards); i++ {
 		card := d.GetCard(i)
 		fmt.Print(card)
 		fmt.Print("\n")
 	}
+	fmt.Print("\n")
+}
+
+func (d *Deck) Shuffle() {
+	rand.Seed(time.Now().Unix())
+
+	cards := d.cards
+	rand.Shuffle(len(cards), func(i, j int) {
+		cards[i], cards[j] = cards[j], cards[i]
+	})
+	d.cards = cards
 }
