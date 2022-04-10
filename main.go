@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Claude47/poker/pkg/components"
+	"github.com/Claude47/poker/pkg/player"
 )
 
 func main() {
@@ -16,4 +17,7 @@ func main() {
 
 	// print
 	deck.Print()
+
+	player := player.CreateNewPlayer("Claude")
+	player.Print()
 }

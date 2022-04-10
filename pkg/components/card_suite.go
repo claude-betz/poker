@@ -15,6 +15,6 @@ func (s Suite) String() string {
 }
 
 // EnumIndex - Creating common behavior - give the type a EnumIndex functio
-func (v Suite) EnumIndex() int {
-	return int(v)
+func (s Suite) EnumIndex() int {
+	return int(s)
 }
